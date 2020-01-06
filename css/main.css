@@ -1,0 +1,29 @@
+section {
+    padding: 10px;
+}
+
+i{
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.table thead th {
+    text-transform: uppercase;
+    background-color: #dedede;
+    font-size: 0.7em;
+    color: #656565;
+    padding: 0.55rem;
+}
+
+.table td {
+    font-size: 0.85em;
+}
+
+.avatar-employee {
+    width: 75px;
+    height: 75px;
+}
+
+.form-group .avatar-employee {
+    padding: 5px;
+}

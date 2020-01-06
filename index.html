@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/5098b18014.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<section id="appEmployeesList">
+    <h2>Empleados</h2>
+    <div class="table-responsive">
+        <section id="actionButtons">
+            <button id="addEmployeeBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addEmployeeModal">
+                Nuevo
+            </button>
+        </section>
+
+        <!-- Modal Nuevo-->
+        <div class="modal" id="addEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="addEmployeeLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <employee-form
+                form_title="Nuevo empleado"
+                form_data=""
+                ></employee-form>
+            </div>
+        </div>
+
+        <!-- Modal Eliminar-->
+        <div class="modal" id="deleteEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="deleteEmployeeLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+               <delete-form
+                    :employee="employee"
+               ></delete-form>
+            </div>
+        </div>
+
+        <!-- Modal Update-->
+        <div class="modal" id="updateEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="updateEmployeeLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <employee-form
+                        form_title="Editar empleado"
+                        :form_data="form_data"
+               ></employee-form>
+            </div>
+        </div>
+
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col"><i class="fas fa-sort"></i>Nombre</th>
+                <th scope="col"><i class="fas fa-sort"></i>Apellidos</th>
+                <th scope="col"><i class="fas fa-sort"></i>Email</th>
+                <th scope="col"><i class="fas fa-sort"></i>Cargo</th>
+                <th scope="col"><i class="fas fa-sort"></i>Centro de trabajo</th>
+                <th scope="col"><i class="fas fa-sort"></i>Salario</th>
+                <th scope="col"><i class="fas fa-sort"></i>Horas semanales</th>
+                <th scope="col">Acciones</th>
+
+            </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(item, index) in employees">
+                    <td><img class="avatar-employee mx-auto rounded-circle img-fluid" :src="item.avatar"
+                             :alt="index"></td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.surname}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.position}}</td>
+                    <td>{{item.office}}</td>
+                    <td>{{item.salary}}</td>
+                    <td>{{item.workingHours}}</td>
+                    <td>
+                        <div class="actions">
+                            <span data-toggle="tooltip" data-placement="bottom" title="Editar" @click="loadEmployeeData(index)">
+                            <i class="fas fa-edit" data-toggle="modal" data-target="#updateEmployeeModal"></i>
+                        </span>
+                            <span data-toggle="tooltip" data-placement="bottom" title="Eliminar"  @click="deleteEmployeeData(index)">
+                            <i class="fas fa-trash-alt" data-toggle="modal" data-target="#deleteEmployeeModal"></i>
+                        </span>
+                        </div>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+        <pagination page="pageActive"></pagination>
+    </div>
+
+</section>
+<!-- VUE -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios@0.18.0/dist/axios.min.js"></script>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<script src="js/helpers/index.js"></script>
+
+<!-- SERVICES -->
+<script src="js/EmployeesApiService.js"></script>
+
+<!-- VUE APP -->
+<script src="js/components/Pagination.js"></script>
+<script src="js/components/DeleteForm.js"></script>
+<script src="js/components/EmployeeForm.js"></script>
+<script src="js/widget-employees.js"></script>
+</body>
+</html>
