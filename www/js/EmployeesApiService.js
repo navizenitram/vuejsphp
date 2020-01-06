@@ -8,7 +8,7 @@ class EmployeesApiService {
             .then(({data}) => data)
     }
     getUrlCompanyList(page) {
-        return `/vuejsexample/Api/getEmployeesList.php?company=${this.companyId}&page=${page}`
+        return `/api/getEmployeesList.php?company=${this.companyId}&page=${page}`
     }
 
     getEmployee(employeeId) {
@@ -17,6 +17,6 @@ class EmployeesApiService {
             .then(({data}) => data)
     }
     getUrlGetEmployee(employeeId) {
-        return `/vuejsexample/Api/getEmployee.php?company=${this.companyId}&employeeId=${employeeId}`
+        return `/api/getEmployee.php?company=${this.companyId}&employeeId=${employeeId}`
     }
 }
