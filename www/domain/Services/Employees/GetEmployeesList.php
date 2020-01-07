@@ -3,29 +3,29 @@
 
 namespace Services\Employees;
 
+use Model\Employees\EmployeesRepository;
 use Model\Employees\EmployeesRepositoryMongoDB;
 use Model\ValueObjects\Uuid;
 
 final class GetEmployeesList
 {
-    private $companyId;
+    private $employeesRepository;
     private $page;
 
-    private function __construct(string $companyId, int $page)
+    private function __construct(EmployeesRepository $employeesRepository, int $page)
     {
-        $this->companyId = Uuid::from($companyId)->value();
+        $this->employeesRepository = $employeesRepository;
         $this->page = $page;
     }
 
     public function __invoke(): array
     {
-        $employeesRepository = new EmployeesRepositoryMongoDB($this->companyId);
-        return $employeesRepository->getEmployeesList($this->page);
+        return $this->employeesRepository->getEmployeesList($this->page);
     }
 
-    public static function get(string $companyId, int $page): array
+    public static function get(EmployeesRepository $employeesRepository, int $page): array
     {
-        $getEmployeesList = new self($companyId, $page);
+        $getEmployeesList = new self($employeesRepository, $page);
         return $getEmployeesList();
     }
 }

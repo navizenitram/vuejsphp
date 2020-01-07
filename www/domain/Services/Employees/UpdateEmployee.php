@@ -4,22 +4,22 @@
 namespace Services\Employees;
 
 
+use Model\Employees\EmployeesRepository;
 use Model\Employees\EmployeesRepositoryMongoDB;
 use Model\ValueObjects\Employee;
 use Model\ValueObjects\Uuid;
 
 final class UpdateEmployee
 {
-    private $companyId;
+    private $employeesRepository;
 
-    public function __construct(string $companyId)
+    public function __construct(EmployeesRepository $employeesRepository)
     {
-        $this->companyId = Uuid::from($companyId)->value();
+        $this->employeesRepository = $employeesRepository;
     }
 
     public function __invoke(Employee $employee): bool
     {
-        $employeesRepository = new EmployeesRepositoryMongoDB($this->companyId);
-        return $employeesRepository->updateEmployee($employee);
+        return $this->employeesRepository->updateEmployee($employee);
     }
 }

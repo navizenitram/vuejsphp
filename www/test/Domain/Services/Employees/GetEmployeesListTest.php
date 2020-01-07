@@ -7,7 +7,9 @@ class GetEmployeesListTest extends TestCase
 {
     public function testGetList()
     {
-        $data = GetEmployeesList::get(COMPANY_ID, 1);
+        //TODO: Mocking db class
+        $dbRepo = new \Model\Employees\EmployeesRepositoryMongoDB(COMPANY_ID);
+        $data = GetEmployeesList::get($dbRepo, 1);
         $this->assertIsArray($data);
     }
 }

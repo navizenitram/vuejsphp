@@ -4,21 +4,22 @@
 namespace Services\Employees;
 
 
-use Model\Employees\EmployeesRepositoryMongoDB;
+use Model\Employees\EmployeesRepository;
 use Model\ValueObjects\Uuid;
 
 final class DeleteEmployee
 {
-    private $companyId;
+    private $employeesRepository;
+    private $employeeId;
 
-    public function __construct(string $companyId)
+    public function __construct(EmployeesRepository $employeesRepository, string $employeeId)
     {
-        $this->companyId = Uuid::from($companyId)->value();
+        $this->employeesRepository = $employeesRepository;
+        $this->employeeId = Uuid::from($employeeId)->value();
     }
 
     public function __invoke(): bool
     {
-        $employeesRepository = new EmployeesRepositoryMongoDB($this->companyId);
-        return $employeesRepository->deleteEmployee(Uuid::from('3c0a8429-d53a-4218-a831-ea89bd2bc001')->value());
+        return $this->employeesRepository->deleteEmployee($this->employeeId);
     }
 }
