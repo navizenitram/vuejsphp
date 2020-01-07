@@ -28,6 +28,7 @@ There are two ways to execute the project:
 ### Frontend
 <p>In order to be ready for migrate to Progressive Web App, the app has been implemented under VueJs framework. With the aim of write reusable code some components have been created: forms, table rows, pagination ... All this components work together orchested by de main widget of the app. </p>
 <p>With the CQRS pattern in mind, if the app was fully functional, the new employees (or any other resource) will have an Uuid created in frontend and (for security reasons) validated in backend. In this way it is possible to be completely decoupled from the database system.  </p>
+
 ### Backend
 <p>In the development of the backend it has been implemented following SOLID principles such as SRP (Single Responsibility Principle) or DIP (Dependency Inversion Principle). The code has also been organized following some principles of DDD (ValueObjects) and hexagonal architecture.</p>
 
