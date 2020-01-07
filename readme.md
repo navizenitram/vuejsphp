@@ -18,8 +18,8 @@ There are two ways to execute the project:
   `docker run -d -p 8080:80 vuejsphp`  
 ##
 * Docker Hub <br>
-`docker pull navizenitram/vuejsphp:v0`<br>
-`docker run -d -p 8080:80 navizenitram/vuejsphp:v0`
+`docker pull navizenitram/vuejsphp:v0.1`<br>
+`docker run -d -p 8080:80 navizenitram/vuejsphp:v0.1`
 ## Project explanation
 
 ### Introduction
@@ -33,8 +33,10 @@ There are two ways to execute the project:
 
 ### TODO List
 <p>If I had more time I would have liked:</p>
-* Develop all functionalities <br>
+* Develop all use case functionalities <br>
+* Full VueJs components development <br>
 * Really use MongoDB (or another database) and not the "fake" class with hardcoded data. <br>
 * Mocking DB class in test classes <br>
 * Save the images in a cloud service (For example S3)
+
 
