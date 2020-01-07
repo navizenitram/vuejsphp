@@ -6,7 +6,7 @@ Example of a VueJS & PHP application following Domain-Driven Design (DDD) and SO
 
 * [Environment setup](#environment-setup)
 * [Project explanation](#project-explanation)
-* [Test] (#test)
+* [Test](#test)
 * [TODO List](#todo-list)
 
 ## Environment setup
