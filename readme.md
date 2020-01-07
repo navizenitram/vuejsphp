@@ -38,7 +38,7 @@ There are two ways to execute the project:
 * Full VueJs components development <br>
 * Really use MongoDB (or another database) and not the "fake" class with hardcoded data. <br>
 * Mocking DB class in test classes <br>
-* Save the images in a cloud service (For example S3)
+* Save the images in a cloud service (For example S3) <br>
 * Install libraries for manage Uuid's in frontend and backend
 
 
