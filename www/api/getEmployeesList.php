@@ -1,4 +1,5 @@
 <?php
+//This should be an API REST
 include '../bootstrap.php';
 $employeeRepository = new \Model\Employees\EmployeesRepositoryMongoDB(COMPANY_ID);
 $page = 1;

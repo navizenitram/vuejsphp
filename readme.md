@@ -6,6 +6,7 @@ Example of a VueJS & PHP application following Domain-Driven Design (DDD) and SO
 
 * [Environment setup](#environment-setup)
 * [Project explanation](#project-explanation)
+* [Test] (#test)
 * [TODO List](#todo-list)
 
 ## Environment setup
@@ -32,6 +33,10 @@ There are two ways to execute the project:
 ### Backend
 <p>In the development of the backend it has been implemented following SOLID principles such as SRP (Single Responsibility Principle) or DIP (Dependency Inversion Principle). The code has also been organized following some principles of DDD (ValueObjects) and hexagonal architecture.</p>
 
+### Test
+<p>
+The backend has been developed "following" the TDD paradigm. But only for classes that represent services or use cases. In this case, due to the simplicity of the code when testing the use cases, the rest of the classes are covered.</p>
+
 ### TODO List
 <p>If I had more time I would have liked:</p>
 * Develop all use case functionalities <br>
@@ -39,6 +44,8 @@ There are two ways to execute the project:
 * Really use MongoDB (or another database) and not the "fake" class with hardcoded data. <br>
 * Mocking DB class in test classes <br>
 * Save the images in a cloud service (For example S3) <br>
-* Install libraries for manage Uuid's in frontend and backend
+* Install libraries for manage Uuid's in frontend and backend <br>
+* Write or install (framework) a true API Rest. <br>
+* Write all the unit tests. <br>
 
 

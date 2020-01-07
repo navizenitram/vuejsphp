@@ -1,4 +1,5 @@
 <?php
+//This should be an API REST
 include '../bootstrap.php';
 //TODO: Checks de seguridad
 //TODO: Recoger los datos con alguna clase que gestione las Request
