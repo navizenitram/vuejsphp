@@ -32,6 +32,7 @@ Hay dos formas de ejecutar la demo:
     <li>/AppServices: Casos de uso que interactuan con los objetos de la capa de dominio haciendo uso de Dependency Inversion Principle</li>
     <li>/Structure: Implementación de las interficies. TODO: Mover el directorio /vendor aqui.</li>
 </ul>
+<p>Fuera del directorio /app tenemos el directorio /vendor generado por composer y el directorio /api, que de momento son simples scripts php que simulan ser "controladores" que implementan los casos de uso. Se puede ver como desde aqui es donde se instancia las implementaciones de los contratos y se inyectan a los casos de uso. En el mundo real esto estaría gestionado por el framework de turno. Otro ejemplo de como el framework quedaría en la capa más exterior de nuestra arquitectura y que si se implementa bien un cambio o acutalización no afetaría al resto de capas. Así se ve claramente el desacoplamiento y la libertad que nos ofrece la aquitectura hexagonal y la aplicación de los principios SOLID</p>
 ### TODO List
 <ul>
 <li>Rehacer los TEST que han quedado rotos después del último refactor.</li>
