@@ -27,6 +27,11 @@ Hay dos formas de ejecutar la demo:
 
 <p>La idea es en próximas versiones es llegar a tener una Progressive Web APP y generar los ID con UUID con el objetivo de que esto se convierta en un ejemplo de CQRS</p>
 <p>En el directorio /app se encuentra la representación de la arquitectura: </p>
+<ul>
+    <li>/Domain: Interfaces y ValueObjects que modelan el dominio de la aplicación </li>
+    <li>/AppServices: Casos de uso que interactuan con los objetos de la capa de dominio haciendo uso de Dependency Inversion Principle</li>
+    <li>/Structure: Implementación de las interficies. TODO: Mover el directorio /vendor aqui.</li>
+</ul>
 ### TODO List
 <ul>
 <li>Rehacer los TEST que han quedado rotos después del último refactor.</li>
