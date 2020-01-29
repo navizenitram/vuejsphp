@@ -26,7 +26,7 @@ Hay dos formas de ejecutar la demo:
 <p>Pequeño ejemplo personal en el que iré desarrollando el frontend en VueJs e iré aplicando en el backend principios SOLID y de Arquitectura Hexagonal</p>
 
 <p>La idea es en próximas versiones es llegar a tener una Progressive Web APP y generar los ID con UUID con el objetivo de que esto se convierta en un ejemplo de CQRS</p>
-
+<p>En el directorio /app se encuentra la representación de la arquitectura: </p>
 ### TODO List
 <ul>
 <li>Rehacer los TEST que han quedado rotos después del último refactor.</li>
